@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto en Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="img-logo">
+            <img src="img/Logo.png" alt="logo de alura">
+        </div>
+    </header>
+
+    <main>
+        <form>
+            <textarea class="texto-Encriptador" name="texto-Encriptador" id=""  cols="70" rows="10" 
+            placeholder="Ingrese el texto aquí"></textarea>
+
+            <div class="span-error">
+                <span> <img class="icon-advertencia" src="img/error.png" alt=""> Solo letras minúsculas y sin acentos</span>
+                <div class="botones" >
+                    <input class="btn-encriptar" type="button" value="Encriptar" onclick="encriptar()">
+                    <input class="btn-desencriptar" type="button" value="Desencriptar" onclick="desencriptar()">
+                </div>
+            </div>
+        </form>
+        <section>
+            <div class="txt-desencriptado">
+                <img src="img/Muñeco.png" alt="">
+                <img src="img/diamod.png" alt="">
+                <div class="textoEncritado" id="textoEncriptado">
+                    <h2 id="tituloMensaje">Ningún mensaje encontrado</h2>
+                    <p>Ingrese el texto que desea encriptar o desencriptar</p>
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje"></textarea>
+                </div>
+
+
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
