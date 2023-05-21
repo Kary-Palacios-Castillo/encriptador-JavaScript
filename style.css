@@ -16,7 +16,7 @@ body{
     width: 100vw;
     height: 100vh;
 }
-.texto-Encriptador{
+.texto{
 position: absolute;
 width: 42%;
 height: 60%;
@@ -33,7 +33,7 @@ color: #0A3871;
 resize: none;
 outline: none;
 }
-.texto-Encriptador::placeholder{
+.texto::placeholder{
     color: #0A3871;
 }
 .span-terminos{
