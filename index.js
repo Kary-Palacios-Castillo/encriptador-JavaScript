@@ -53,3 +53,11 @@ function  desencriptar (){
             alert("Debes ingresar algún texto");
         }
 }
+
+const btnCopiar = document.querySelector("btn-copiar");
+btnCopiar.addEventListener("click ",copiar = () => {
+    var contenido = document.querySelector("texto-copiado").textContent;
+    navigator.clipboard.writeText(contenido);
+    console.log("");
+
+})

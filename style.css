@@ -5,8 +5,11 @@
 }
 body{
     background: #f3f5fc;
-
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     
+
 }
 .img-logo{
     width: 100%;
@@ -193,8 +196,24 @@ cursor: pointer;
     top: 100px;
     right: 4px;
     
-    
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    top: 110%;
+    width: 100%;
+    position: absolute;
+    background: #d8dfe8;
+    padding: 20px;
+    gap: 50px;
 
+}
+.copyright{
+    color: #ffffff;
+    font-size: 13px;
+    margin: auto;
+    justify-content: center;
 }
 
 /*Media query*/
