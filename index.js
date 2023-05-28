@@ -1,63 +1,61 @@
-function encriptar(){
-    let texto = document.getElementById("texto").value;
-    let tituloTxt = document.getElementById("tituloTexto");
-    let parrafo = document.getElementById("parrafo");
-    let imagen = document.getElementById("imagen");
+function encriptar() {
+    var texto = document.getElementById("input-texto").value.toLowerCase();
+    var txtcifrado = texto.replace(/e/igm,"enter");
+    var txtcifrado = txtcifrado.replace(/o/igm,"ober");
+    var txtcifrado = txtcifrado.replace(/i/igm,"imes");
+    var txtcifrado = txtcifrado.replace(/a/igm,"ai");
+    var txtcifrado = txtcifrado.replace(/u/igm,"ufat");
+    
+    if (texto.length !=0){
+    document.getElementById("imgResultado").style.display = "none";
+    document.getElementById("texto1").style.display = "none";
+    document.getElementById("copiar").style.display = "show";
+    document.getElementById("texto2").innerHTML = txtcifrado;
+    document.getElementById("input-texto").innerHTML = " ";
+    document.getElementById("copiar").style.display = "inherit";
+  
+      
+  }else{
+      alert("Debes ingresar algún texto");
+  }
+  }
+  
+  function desencriptar() {
+    var texto = document.getElementById("input-texto").value.toLowerCase();
+    var txtcifrado = texto.replace(/enter/igm,"e");
+    var txtcifrado = txtcifrado.replace(/ober/igm,"o");
+    var txtcifrado = txtcifrado.replace(/imes/igm,"i");
+    var txtcifrado = txtcifrado.replace(/ai/igm,"a");
+    var txtcifrado = txtcifrado.replace(/ufat/igm,"u");
+    
+    if (texto.length !=0){
+    document.getElementById("imgResultado").style.display = "none";
+    document.getElementById("texto1").style.display = "none";
+    document.getElementById("copiar").style.display = "show";
+    document.getElementById("texto2").innerHTML = txtcifrado;
+    document.getElementById("input-texto").innerHTML = " ";
+    document.getElementById("copiar").style.display = "inherit";
 
-
-    let textoCifrado = texto 
-        .replace (/e/gi, "enter")
-        .replace (/i/gi, "imes")
-        .replace (/a/gi, "ai")
-        .replace (/o/gi, "ober")
-        .replace (/u/gi, "ufat");
-
-
-        if (texto.length !=0){
-            document.getElementById("texto").value = textoCifrado;
-            tituloTxt.textContent = "Texto encriptado con éxito";
-            parrafo.textContent="";
-            imagen.src = "./img/exito.png";
-        }else{
-            imagen.src = "./img/Muñeco.png";
-            tituloTxt.textContent = "Ningún mensaje fue encontrado";
-            parrafo.textContent="Ingresa el texto que deseas encriptar o desencriptar";
-            alert("Debes ingresar algún texto");
-        }
-
+    } else{
+      alert("Debes ingresar algun texto");
+    }
+    
 }
 
-function  desencriptar (){
-    let texto = document.getElementById("texto").value;
-    let tituloTxt = document.getElementById("tituloTexto");
-    let parrafo = document.getElementById("parrafo");
-    let imagen = document.getElementById("imagen");
 
 
-    let textoCifrado = texto
-        .replace (/enter/gi, "e")
-        .replace (/imes/gi, "i")
-        .replace (/ai/gi, "a")
-        .replace (/ober/gi, "o")
-        .replace (/ufat/gi, "u");
 
-        if (texto.length !=0){
-            document.getElementById("texto").value = textoCifrado;
-            tituloTxt.textContent = "Texto desencriptado con éxito";
-            parrafo.textContent="";
-            imagen.src = "./img/exito.png";
-        }else{
-            imagen.src = "./img/Muñeco.png";
-            tituloTxt.textContent = "Ningún mensaje fue encontrado";
-            parrafo.textContent="Ingresa el texto que deseas encriptar o desencriptar";
-            alert("Debes ingresar algún texto");
-        }
-}
+var $txtcopiado = document.getElementById("texto2"),
+$btncopiado = document.getElementById("copiar");
+//$copiado = document.getElementById("copiar");
 
-const btnCopiar = document.querySelector("btn-copiar");
-btnCopiar.addEventListener("click ",copiar = () => {
-    var contenido = document.querySelector("texto-copiado").textContent;
-    navigator.clipboard.writeText(contenido);
-    console.log("");
+$btncopiado.addEventListener("click", e =>{
+    $txtcopiado.select();
+    document.execCommand("copy");
+
+    //$copiado.innerHTML="Copiado..."
+    alert("Texto copiado correctamente");
+    window.location.reload();
+
 
 })

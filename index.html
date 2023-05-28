@@ -6,51 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de Texto en Javascript</title>
     <link rel="shortcut icon" href="img/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <div class="img-logo">
-            <img src="img/Logo.png" alt="logo de alura">
+    <div class="container">
+        <div class="logo">
+        <img class="logoImg" src="img/logo.png">
         </div>
-
-        <section class="container">
-            <div class="encriptador">
-                <textarea class="texto" name="texto" id="texto"  cols="70" rows="10" 
-                placeholder="Ingrese el texto aquí"></textarea>
-                
+        <div class="txtEncriptar">
+            <input class="input-texto" type="text" name="input-texto" id="input-texto" placeholder="Ingrese el texto aqui" pattern="[a-z]{1,15}">
+        </div>
+        
+        <div class="txt-resultado">
+        <img src="img/Muñeco.png" class="imgResultado" id="imgResultado">
+        <h1 class="texto1" id="texto1">Ningún mensaje fue encontrado</h1>
+        <textarea class="texto2" id="texto2">Ingresa el texto que desees encriptar o desencriptar.</textarea>
+        <button type="button" class="copiar" id="copiar" onclick="copiar()">Copiar</button>
+    </div>
+        <div class="botones">
+        <p class="p-condicion"> <img class="condicion" id="condicion" src="img/error.png" alt="">Sólo letra minusculas y sin acento</p>
+        <button type="button" class="btn-encriptar" id="btn-encriptar" onclick="encriptar()" >Encriptar</button>
+        <button type="button" class="btn-desencriptar" id="btn-desencriptar" onclick="desencriptar()" >Desencriptar</button>
+        </div>
+    </div>
     
-                <div class="span-terminos">
-                    <span> <img class="icon-advertencia" src="img/error.png" alt=""> Solo letras minúsculas y sin acentos</span>
-                </div>
-                    <div class="botones" >
-                        <input class="btn-encriptar" type="button" value="Encriptar" onclick="encriptar()">
-                        <input class="btn-desencriptar" type="button" value="Desencriptar" onclick="desencriptar()">
-                    </div>
-                
-            
-                <div class="txt-desencriptado">
-                    <img src="img/Muñeco.png" alt="" id="imagen">
-                    <div class="textoEncritado" id="textoEncriptado">
-                        <h2 id="tituloTexto">Ningún mensaje encontrado</h2>
-                        <p id="parrafo">Ingrese el texto que desea encriptar o desencriptar</p> 
-                    </div>
-                    <div class="container-copiar">
-                        <input type="button" class="btn-copiar" id="btn-copiar" value="Copiar">
-                    </div>
-                </div>
-                
-                <div class="texto-copiado">
-                    <p class="resultado">
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-                <p class="copyright">&copy Copyright deWebchita - 2023</p>
-
-        </footer>
-
+    <footer>
+        <p class="copyright">&copy Copyright deWebchita - 2023</p>
+</footer>
     <script src="index.js"></script>
         
 </body>
